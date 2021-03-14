@@ -1,0 +1,112 @@
+No.	Priority	Requirements No.	Summary	                                                                  Module
+1	High	    1	                Check that a user can Sign In with valid credentials	                   LogIn
+
+"Precondition:
+User is registered with credentials: 380932714113/123456qwerty
+Steps:
+1. Open "https://avic.ua/"
+2. Click on userIcon
+3. Write down "380932714113" Username
+4. Write down "123456qwerty" Password
+5. Click Sign In button and check that Greeting message is displayed
+
+Expected Results
+1. Webservice is opened. The webservice looks as per comps
+2. LogIn page is opened
+3. Username is added
+4. Password is added
+5. The user is signed In with valid credentials and the Greeting message is displayed
+
+
+2	Medium	     2	    Check the the SignOut button is displayed                                         SignOut Button
+
+"Precondition:
+User is registered with credentials: 380932714113/123456qwerty
+Steps:
+1. Open "https://avic.ua/"
+2. Click on userIcon
+3. Write down "380932714113" Username
+4. Write down "123456qwerty" Password
+5. Click Sign In button
+6. Close the Greeting message
+7. Click on userIcon
+8. Check that SignOut button is visible
+
+Expected Results
+1. Webservice is opened. The webservice looks as per comps
+2. LogIn page is opened
+3. Username is added
+4. Password is added
+5. The user is signed In with valid credentials and the Greeting message is displayed
+6. The Greeting greeting is closed
+7. Profile page is opened
+8. SignOut button is displayed
+
+
+3	Medium	      5	        Check that Invalid Authorization Message is Displayed          Invalid Authorization Message
+
+"Precondition:
+User is registered with credentials: 380932714113/123456qwerty
+Steps:
+1. Open "https://avic.ua/"
+2. Click on userIcon
+3. Write down "980932714113" Username
+4. Write down "123456" Password
+5. Click Sign In button and check that Greeting message isn't displayed
+
+Expected Results
+1. Webservice is opened. The webservice looks as per comps
+2. LogIn page is opened
+3. Invalid Username is added
+4. Invalid Password is added
+5. Invalid Authorization Message is Displayed. The user isn't signed In with invalid credentials
+and the Greeting message isn't displayed
+
+
+4	Medium	        6	        Check that Url Contains Search Word	                                             Search
+
+Steps:
+1. Open "https://avic.ua/"
+2. Click on Search
+3. Write down 'MacBook Air' into search field
+4. Click Enter
+5. Check url
+
+Expected Results
+1. Webservice is opened. The webservice looks as per comps
+2. Search is selected
+3. 'MacBook Air' value is filled
+4. Search is performed
+5. The URL is contained 'query=MacBook+Air' checkElementsAmountOnSearchPage
+
+
+5	Medium	          6	         Check that Search Results Contains Search Word                                   Search
+
+1. Open "https://avic.ua/"
+2. Click on Search
+3. Write down 'MacBook Air' into search field
+4. Click Enter
+5. Check that all of the found elements contains 'MacBook Air' value
+
+Expected Results
+1. Webservice is opened. The webservice looks as per comps
+2. Search is selected
+3. 'MacBook Air' value is filled
+4. Search is performed. 12 first results are found
+5. All of the found elements contains 'MacBook Air' value
+
+
+6	Medium	          6	         Check that Elements Amount On Search Page is 12                                 Search
+
+1. Open "https://avic.ua/"
+2. Click on Search
+3. Write down 'MacBook Air' into search field
+4. Click Enter
+5. Check that there are 12 elements are displayed on the search page
+
+Expected Results
+1. Webservice is opened. The webservice looks as per comps
+2. Search is selected
+3. 'MacBook Air' value is filled
+4. Search is performed
+5. 12 first results are displayed on the search page

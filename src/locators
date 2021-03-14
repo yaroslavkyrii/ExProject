@@ -1,0 +1,18 @@
+#LoginPage
+LoginPage.click.userIcon = ".//div[@class='header-bottom__right-icon']//i[@class='icon icon-user-big']"
+LoginPage.clear/sendKeys.loginField = ".//form[@action='https://avic.ua/authorization']//input[@class='validate']"
+LoginPage.clear/sendKeys.passwordField = ".//input[@class='validate show-password']"
+LoginPage.click.signInButton = ".//button[@class='button-reset main-btn submit main-btn--green']"
+LoginPage.isDisplayed.invalidAuthorizationMessage = ".//div[text()=' Неверные данные авторизации.  ']"
+
+
+#HomePage
+HomePage.isDisplayed.greetingMessage = ".//div[text()='Вы успешно авторизовались!']"
+HomePage.click.greetingCloseButton = ".//button[@type='button']"
+HomePage.sendKeys.searchField = "//input[@id='input_search']"
+
+#ProfilePage
+HomePage.isDisplayed.signOutButton = ".//a[@href='https://avic.ua/logout']"
+
+#SearchResultsPage
+SearchResultsPage.returnList.listOfSearchedElements = "//div[@class='prod-cart__descr']"
