@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -19,9 +18,7 @@ public class SearchTest extends BaseTest{
     @Test(priority = 2)
     public void checkThatSearchResultsContainsSearchWord() {
         getHomePage().searchByKeyword(SEARCH_KEYWORD);
-        for (WebElement webElement : getSearchResultPage().getSearchedElements()) {
-            assertTrue(webElement.getText().contains(SEARCH_KEYWORD));
-        }
+        getSearchResultPage().getElements();
     }
     @Test(priority = 3)
     public void checkElementsAmountOnSearchPage() {

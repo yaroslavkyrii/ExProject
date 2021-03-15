@@ -9,6 +9,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
+import static org.junit.Assert.assertTrue;
+
 public class SearchResultsPage extends BasePage{
     WebDriverWait webDriverWait15;
 
@@ -31,5 +33,9 @@ public class SearchResultsPage extends BasePage{
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         webDriverWait15.until(ExpectedConditions.numberOfElementsToBe(By.xpath("//div[@class='prod-cart__descr']"), numberOfResults));
     }
-
+    public void getElements() {
+        for (WebElement webElement : getSearchedElements()) {
+            assertTrue(webElement.getText().contains("MacBook Air"));
+        }
+    }
 }

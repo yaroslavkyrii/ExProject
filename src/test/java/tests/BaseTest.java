@@ -1,6 +1,8 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Step;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -69,5 +71,10 @@ public class BaseTest {
 
     public ProfilePage getProfilePage() {
         return new ProfilePage(getDriver());
+
+    }
+    @Step
+    protected void checkExpectedResult(String message, boolean actualResult){
+        Assert.assertTrue(message, actualResult);
     }
 }

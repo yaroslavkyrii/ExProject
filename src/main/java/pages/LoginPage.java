@@ -17,43 +17,43 @@ public class LoginPage extends BasePage{
     @FindBy(xpath = ".//div[text()=' Неверные данные авторизации.  ']")
     private WebElement invalidAuthorizationMessage;
 
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
+
     public void clickOnUserIcon(){
-        userIcon.click();
+        clickOnElement(userIcon);
     }
 
     public void clickOnLoginField(){
         loginField.clear();
     }
 
-    public void fillLoginField(){
-        loginField.sendKeys("380932714113");
-        System.out.println("LogIn was inputted into LoginInput");
+    public void fillLoginField(String login){
+        enterTextIntoElement(loginField, login);
     }
-    public void fillLoginFieldWithInvalidValue(){
-        loginField.sendKeys("980932714113");
-        System.out.println("Invalid LogIn was inputted into LoginInput");
-    }
+    /*public void fillLoginFieldWithInvalidValue(String invalidLogin){
+        loginField.sendKeys(invalidLogin);
+        logger.info("Invalid LogIn was inputted into LoginInput");
+    }*/
 
     public void clickOnPasswordField(){
         passwordField.clear();
     }
 
-    public void fillPasswordField(){
-        passwordField.sendKeys("123456qwerty");
-        System.out.println("Password was inputted into InputPass");
+    public void fillPasswordField(String password){
+        enterTextIntoElement(passwordField, password);
     }
-    public void fillPasswordFieldWithInvalidValue(){
-        passwordField.sendKeys("123456");
-        System.out.println("Invalid Password was inputted into InputPass");
-    }
+    /*public void fillPasswordFieldWithInvalidValue(String invalidPassword){
+        passwordField.sendKeys(invalidPassword);
+        logger.info("Invalid Password was inputted into InputPass");
+    }*/
 
     public void clickOnSignIn(){
-        signInButton.click();
-        System.out.println("Button SignIn was clicked");
+        clickOnElement(signInButton);
+        logger.info("Button SignIn was clicked");
     }
 
     public boolean isInvalidAuthorizationMessage(){
