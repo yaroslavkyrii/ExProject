@@ -1,41 +1,42 @@
 package tests;
-
-import org.junit.Assert;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
+    //private WebDriver driver;
+    //private static final String AVIC_URL = "https://avic.ua/";
 
     @Test(priority = 1)
     public void validLogin() {
+        //driver.get(AVIC_URL);
         getLoginPage().clickOnUserIcon();
         getLoginPage().clickOnLoginField();
-        getLoginPage().fillLoginField();
+        getLoginPage().fillLoginField("380932714113");
         getLoginPage().clickOnPasswordField();
-        getLoginPage().fillPasswordField();
+        getLoginPage().fillPasswordField("123456qwerty");
         getLoginPage().clickOnSignIn();
-        Assert.assertTrue("Greeting Message is not displayed", getHomePage().isGreetingMessageDisplayed());
+        checkExpectedResult("Greeting Message is not displayed", getHomePage().isGreetingMessageDisplayed());
     }
 
     @Test(priority = 2)
     public void isButtonSignOutVisible() {
         getLoginPage().clickOnUserIcon();
         getLoginPage().clickOnLoginField();
-        getLoginPage().fillLoginField();
+        getLoginPage().fillLoginField("380932714113");
         getLoginPage().clickOnPasswordField();
-        getLoginPage().fillPasswordField();
+        getLoginPage().fillPasswordField("123456qwerty");
         getLoginPage().clickOnSignIn();
         getHomePage().clickOnGreetingCloseButton();
         getLoginPage().clickOnUserIcon();
-        Assert.assertTrue("Button SignOut is not displayed", getProfilePage().isSignOutButtonVisible());
+        checkExpectedResult("Button SignOut is not displayed", getProfilePage().isSignOutButtonVisible());
     }
     @Test(priority = 3)
     public void isInvalidAuthorizationMessageDisplayed() {
         getLoginPage().clickOnUserIcon();
         getLoginPage().clickOnLoginField();
-        getLoginPage().fillLoginFieldWithInvalidValue();
+        getLoginPage().fillLoginField("980932714113");
         getLoginPage().clickOnPasswordField();
-        getLoginPage().fillPasswordFieldWithInvalidValue();
+        getLoginPage().fillPasswordField("123456");
         getLoginPage().clickOnSignIn();
-        Assert.assertTrue("Authorization Message is not displayed", getLoginPage().isInvalidAuthorizationMessage());
+        checkExpectedResult("Authorization Message is not displayed", getLoginPage().isInvalidAuthorizationMessage());
     }
 }

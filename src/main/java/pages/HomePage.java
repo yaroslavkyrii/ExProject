@@ -29,7 +29,7 @@ public class HomePage extends BasePage{
     }
 
     public void clickOnGreetingCloseButton(){
-        greetingCloseButton.click();
-        System.out.println("Greeting Message was closed");
+        clickOnElement(greetingCloseButton);
+        logger.info("Greeting Message was closed");
     }
 }
